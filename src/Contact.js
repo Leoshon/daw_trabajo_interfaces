@@ -8,6 +8,7 @@ const Contact = () => {
   const setText = () => {
     setButtonText("Enviando...");
   };
+
   return (
     <section id="contact" className="contact">
       <Container>
@@ -20,7 +21,7 @@ const Contact = () => {
             <form>
               <Row>
                 <Col md={6}>
-                  <input type="text" placeholder="Nombre" />
+                  <input type="text" placeholder="Nombre"  />
                 </Col>
                 <Col md={6}>
                   <input type="text" placeholder="Apellido" />
