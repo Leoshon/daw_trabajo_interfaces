@@ -6,55 +6,58 @@ import aceitelimon from "./assets/img/aceitelimon.jpg";
 import olivanegra from "./assets/img/olivanegra.jpg";
 import botellaImg from "./assets/img/botella.jpg";
 import olivoCalidad from "./assets/img/olivacalidad2.jpg";
+import {FormattedMessage} from "react-intl";
+
 
 const Productos = () => {
   const productos = [
     {
-      nombre: "Aceite de Oliva Virgen Extra",
+      /* nombre: "Aceite de Oliva Virgen Extra", */
+    nombre: <FormattedMessage id="app.cardTitle1" defaultMessage="Aceite de Oliva Virgen Extra"/>,
       descripcion:
-        "Aceite de Oliva Virgen Extra de la mejor calidad, ideal para ensaladas y tostadas",
-      precio: 9.99,
+      <FormattedMessage id="app.cardText1" defaultMessage="Aceite de Oliva Virgen Extra"/>,
+      precio: <FormattedMessage id="app.cardPrice1" defaultMessage="Aceite de Oliva Virgen Extra"/>,
       imagen: vinagrera,
     },
     {
-      nombre: "Aceite de Oliva gran reserva",
+      nombre: <FormattedMessage id="app.cardTitle2" defaultMessage="Aceite de Oliva Virgen Extra"/>,
       descripcion:
-        "Aceite de Oliva Virgen Extra de calidad excepcional, oro líquido de Jaén",
-      precio: 8.99,
+      <FormattedMessage id="app.cardText2" defaultMessage="Aceite de Oliva Virgen Extra"/>,
+      precio:  <FormattedMessage id="app.cardPrice2" defaultMessage="Aceite de Oliva Virgen Extra"/>,
       imagen: aceitereserva,
     },
     {
-      nombre: "Aceite de Cosecha Temprana",
+      nombre: <FormattedMessage id="app.cardTitle3" defaultMessage="Aceite de Oliva Virgen Extra"/>,
       descripcion:
-        "Aceite de Oliva Virgen Extra de la mejor calidad, con un sabor más intenso y afrutado",
-      precio: 9.99,
+      <FormattedMessage id="app.cardText3" defaultMessage="Aceite de Oliva Virgen Extra"/>,
+      precio:  <FormattedMessage id="app.cardPrice3" defaultMessage="Aceite de Oliva Virgen Extra"/>,
       imagen: aceitelimon,
     },
     {
-      nombre: "Aceite de Oliva Virgen Extra negra",
+      nombre: <FormattedMessage id="app.cardTitle4" defaultMessage="Aceite de Oliva Virgen Extra"/>,
       descripcion:
-        "Aceite de Oliva Virgen Extra de la excepcional calidad, solo para los paladares más exigentes",
-      precio: 11.99,
+      <FormattedMessage id="app.cardText4" defaultMessage="Aceite de Oliva Virgen Extra"/>,
+      precio:  <FormattedMessage id="app.cardPrice4" defaultMessage="Aceite de Oliva Virgen Extra"/>,
       imagen: olivanegra,
     },
     {
-      nombre: "Aceite de Oliva Virgen Extra",
+      nombre: <FormattedMessage id="app.cardTitle5" defaultMessage="Aceite de Oliva Virgen Extra"/>,
       descripcion:
-        "Aceite de Oliva Virgen Extra de la excepcional calidad, ideal para ensaladas y tostadas",
-      precio: 11.99,
+      <FormattedMessage id="app.cardText5" defaultMessage="Aceite de Oliva Virgen Extra"/>,
+      precio:  <FormattedMessage id="app.cardPrice5" defaultMessage="Aceite de Oliva Virgen Extra"/>,
       imagen: botellaImg,
     },
     {
-      nombre: "Aceite de Oliva  Extra",
+      nombre: <FormattedMessage id="app.cardTitle6" defaultMessage="Aceite de Oliva Virgen Extra"/>,
       descripcion:
-        "Aceite de Oliva  de la excepcional calidad, ideal para ensaladas y tostadas",
-      precio: 8.99,
+      <FormattedMessage id="app.cardText6" defaultMessage="Aceite de Oliva Virgen Extra"/>,
+      precio:  <FormattedMessage id="app.cardPrice6" defaultMessage="Aceite de Oliva Virgen Extra"/>,
       imagen: olivoCalidad,
     },
   ];
   return (
     <div>
-      <h1>Nuestros Productos</h1>
+      <h1><FormattedMessage id="app.productos" defaultMessage="Nuestros Productos" /></h1>
       <div className="row">
         {productos.map((producto, index) => (
           <div className="col-md-4" key={index}>

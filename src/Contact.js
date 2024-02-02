@@ -1,13 +1,36 @@
-import React from "react";
 import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import contactImg from "./assets/img/contact-img.svg";
+import { FormattedMessage, injectIntl } from "react-intl";
 
 const Contact = () => {
-  const [buttonText, setButtonText] = useState("Enviar");
+  // eslint-disable-next-line no-unused-vars
+  const [buttonText, setButtonText] = useState("enviar");
   const setText = () => {
-    setButtonText("Enviando...");
+    alert("Mensaje enviado");
+    setButtonText("");
+    
   };
+ 
+  const MyInputName = injectIntl(({intl}) => {
+    return <input type="text" placeholder={intl.formatMessage({id: "app.contactName", defaultMessage: "Nombre"})} />;
+  });
+  const MyInputLastName = injectIntl(({intl}) => {
+    return <input type="text" placeholder={intl.formatMessage({id: "app.contactSurname", defaultMessage: "Apellido"})} />;
+  });
+  const MyInputEmail = injectIntl(({intl}) => {
+    return <input type="email" placeholder={intl.formatMessage({id: "app.contactEmail", defaultMessage: "Email"})} />;
+  });
+  const MyInputPhone = injectIntl(({intl}) => {
+    return <input type="text" placeholder={intl.formatMessage({id: "app.contactPhone", defaultMessage: "Teléfono"})} />;
+  });
+  const MyInputMessage = injectIntl(({intl}) => {
+    return <textarea placeholder={intl.formatMessage({id: "app.contactMessage", defaultMessage: "Mensaje"})} />;
+  });
+  const MyButton = injectIntl(({intl}) => {
+    return <button type="button" onClick={setText} >{intl.formatMessage({id: "app.contactButton1", defaultMessage: "Enviar"})}</button>;
+  });
+
 
   return (
     <section id="contact" className="contact">
@@ -17,26 +40,26 @@ const Contact = () => {
             <img src={contactImg} alt="contact" />
           </Col>
           <Col md={6}>
-            <h2>Contacta</h2>
+            <h2><FormattedMessage id="app.contact" defaultMessage="Contactar"/></h2>
             <form>
               <Row>
                 <Col md={6}>
-                  <input type="text" placeholder="Nombre"  />
+                  <MyInputName />
                 </Col>
                 <Col md={6}>
-                  <input type="text" placeholder="Apellido" />
+                  <MyInputLastName />
                 </Col>
                 <Col md={6}>
-                  <input type="email" placeholder="Email" />
+                  <MyInputEmail />
                 </Col>
                 <Col md={6}>
-                  <input type="text" placeholder="Teléfono" />
+                  <MyInputPhone />
                 </Col>
                 <Col md={12}>
-                  <textarea placeholder="Mensaje"></textarea>
+                  <MyInputMessage />
                 </Col>
                 <Col md={12}>
-                  <button type="button" onClick={setText} >{buttonText}</button>
+                  <MyButton />
                 </Col>
               </Row>
             </form>
