@@ -249,8 +249,12 @@ figcaption {
     opacity: 0.8;
     color: #fff;
     max-width: 500px;
+    margin: 0 auto;
   }
-  div.clearfix p {
-  overflow: hidden;
+  div.clearfix{
+    flex-direction: column;
+    align-items: center;
   }
+
+ 
 }
